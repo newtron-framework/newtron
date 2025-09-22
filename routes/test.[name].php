@@ -6,8 +6,10 @@ use Newtron\Core\Http\Response;
 use Newtron\Core\Routing\FileRoute;
 
 class Test extends FileRoute {
-  public function get(): mixed {
-    return [];
+  public function get(string $name): array {
+    return [
+      'name' => $name,
+    ];
   }
 
   public function render(mixed $data): mixed {
