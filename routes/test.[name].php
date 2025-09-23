@@ -21,4 +21,9 @@ class Test extends FileRoute {
   }
 }
 
-return new Test();
+return [
+  new Test(),
+  [
+    'middleware' => [],
+  ],
+];
