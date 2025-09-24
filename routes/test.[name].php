@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 use Newtron\Core\Application\App;
 use Newtron\Core\Http\Response;
+use Newtron\Core\Quark\Quark;
 use Newtron\Core\Routing\FileRoute;
 
 class Test extends FileRoute {
@@ -13,10 +14,11 @@ class Test extends FileRoute {
   }
 
   public function render(mixed $data): mixed {
+    $data['data'] = $data;
+    $data['config'] = App::getConfig()->all();
+
     return Response::create(
-      "Path requested: " . App::getRequest()->getPath() . 
-        "\n<p>Route data:</p><pre>" . print_r($data, true) . "</pre>" . 
-        "\n<p>Config:</p><pre>" . print_r(App::getConfig()->all(), true) . "</pre>"
+      Quark::render('test', $data)
     );
   }
 }
