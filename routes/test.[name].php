@@ -14,6 +14,8 @@ class Test extends FileRoute {
   }
 
   public function render(mixed $data): mixed {
+    App::getDocument()->setTitle('Demo');
+
     $data['data'] = $data;
     $data['config'] = App::getConfig()->all();
 
