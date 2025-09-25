@@ -12,4 +12,8 @@ App::create(dirname(__DIR__));
 
 App::setErrorPage(404, 'not-found');
 
+$am = App::getAssetManager();
+$am->registerStylesheet('global', '/style.css');
+$am->useStylesheet('global');
+
 App::run();
