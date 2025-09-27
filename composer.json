@@ -1,18 +1,22 @@
 {
   "name": "newtron/app",
   "type": "project",
+  "description": "PHP framework designed around the principle of complex features with embarrassingly simple code",
+  "homepage": "https://newtron.app",
+  "authors": [
+    {
+      "name": "itsnewtjam",
+      "email": "newtron@newtjam.com",
+      "homepage": "https://newtjam.com"
+    }
+  ],
   "autoload": {
     "psr-4": {
-      "Newtron\\App\\": "src/"
+      "Newtron\\App\\": "app/"
     }
   },
   "require": {
-    "newtron/core": "@dev"
-  },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "../newtron-core"
-    }
-  ]
+    "php": ">=8.3.0",
+    "newtron/core": "^0.1"
+  }
 }
