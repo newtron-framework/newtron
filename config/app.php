@@ -2,5 +2,5 @@
 
 return [
   'name' => 'Newtron',
-  'debug' => true,
+  'debug' => false,
 ];
