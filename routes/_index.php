@@ -6,27 +6,22 @@ use Newtron\Core\Http\Response;
 use Newtron\Core\Quark\Quark;
 use Newtron\Core\Routing\FileRoute;
 
-class Test extends FileRoute {
-  public function get(string $name): array {
-    return [
-      'name' => $name,
-    ];
+class Welcome extends FileRoute {
+  public function get(): void {
+    return;
   }
 
   public function render(mixed $data): mixed {
-    App::getDocument()->setTitle('Demo');
-
-    $data['data'] = $data;
-    $data['config'] = App::getConfig()->all();
+    App::getDocument()->setTitle('Welcome to Newtron');
 
     return Response::create(
-      Quark::render('test', $data)
+      Quark::render('welcome')
     );
   }
 }
 
 return [
-  new Test(),
+  new Welcome(),
   [
     'middleware' => [],
   ],
