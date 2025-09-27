@@ -1,5 +1,6 @@
 {
   "name": "newtron/app",
+  "version": "0.1.0",
   "type": "project",
   "description": "PHP framework designed around the principle of complex features with embarrassingly simple code",
   "homepage": "https://newtron.app",
